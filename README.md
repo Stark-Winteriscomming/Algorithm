@@ -1,2 +1,2 @@
 # DesignPattern
-디자인 패턴 공부
+알고리즘 공부
