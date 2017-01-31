@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int N0,M0,N1,M1;
+		N0 = scanner.nextInt();
+		M0 = scanner.nextInt();
+		
+		int metrix_0[][] = new int[N0][M0];
+		for (int i = 0; i < N0; i++) {
+			for(int j = 0; j < M0; j++){
+				metrix_0[i][j] = scanner.nextInt();
+			}
+		}
+		
+		N1 = scanner.nextInt();
+		M1 = scanner.nextInt();
+		int metrix_1[][] = new int[N1][M1];
+		int metrix_result[][] = new int[N0][M1];
+		for (int i = 0; i < N1; i++) {
+			for(int j = 0; j < M1; j++){
+				metrix_1[i][j] = scanner.nextInt();
+			}
+		}
+		
+		//
+		int sum_value = 0;
+		for(int n0=0; n0<N0; n0++){
+			for(int m1=0; m1<M1; m1++){
+				for(int common=0; common<M0; common++){
+					sum_value += (metrix_0[n0][common] * metrix_1[common][m1]);
+				}
+				metrix_result[n0][m1] = sum_value;
+				sum_value = 0;
+			}
+		}
+		
+		for (int i = 0; i < N0; i++) {
+			for (int j = 0; j < M1; j++) {
+				System.out.print(metrix_result[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+}
